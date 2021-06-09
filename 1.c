@@ -53,19 +53,19 @@ int main() {
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
-            set_array(result1, final_result)
+            set_array(result1, final_result);
             fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
-            set_array(result2, final_result)
+            set_array(result2, final_result);
             fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
-            set_array(result3, final_result)
+            set_array(result3, final_result);
             fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
-            set_array(result4, final_result)
+            set_array(result4, final_result);
             end = end - 1;
         }
         array = (char*)calloc(number_of_students, sizeof(char));
@@ -81,19 +81,19 @@ int main() {
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
-            set_array(result1, final_result)
+            set_array(result1, final_result);
             fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
-            set_array(result2, final_result)
+            set_array(result2, final_result);
             fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
-            set_array(result3, final_result)
+            set_array(result3, final_result);
             fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
-            set_array(result4, final_result)
+            set_array(result4, final_result);
             end = end - 1;
         }
         array = (char*)calloc(number_of_students, sizeof(char));
@@ -109,19 +109,19 @@ int main() {
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
-            set_array(result1, final_result)
+            set_array(result1, final_result);
             fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
-            set_array(result2, final_result)
+            set_array(result2, final_result);
             fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
-            set_array(result3, final_result)
+            set_array(result3, final_result);
             fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
-            set_array(result4, final_result)
+            set_array(result4, final_result);
             end = end - 1;
         }
         array = (char*)calloc(number_of_students, sizeof(char));
@@ -150,11 +150,11 @@ void set_array(int * array, int tam) {
     }
 }
 
-void set_registry_array(char * array, int tam, char registry) {
+void set_registry_array(char * registry, int tam, char registry_number) {
     int i;
     for (i = 0; i < tam; i++) {
-        array[i] = registry;
-        fprintf(stderr, "\nSet %s", array[i]);
+        registry[i] = registry_number;
+        fprintf(stderr, "\nSet %s", registry_number);
     }
 }
 
