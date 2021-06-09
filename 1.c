@@ -35,18 +35,16 @@ int main() {
 
 
 	if (id_process == 0) {
-        fprintf(stderr, "\nEnter number of student:"); 
+        fprintf(stderr, "\nEnter number of students:"); 
         scanf("%d", &number_of_students);
         array = (int*)calloc(number_of_students, sizeof(int));
         set_array(array, number_of_students);
     }
-    registry = (char*)calloc(number_of_students, sizeof(char));
-
-    fprintf(stderr, "\nBefore Gather: Comunicator: %s Id Process: %d\n", comunicator, num_process);
 
     MPI_Gather(&number_of_students, 1, MPI_INT, array, 1, MPI_INT, 1, MPI_COMM_WORLD);
 
     if (id_process == 1) {
+        registry = (char*)calloc(number_of_students, sizeof(char));
         begin = (number_of_students * 0) / 3;
         end = ((number_of_students * (0 + 1)) / 3) - 1;
         for (k = 0; k < end; k++) {
@@ -78,6 +76,7 @@ int main() {
     }
 
     if (id_process == 2) {
+        registry = (char*)calloc(number_of_students, sizeof(char));
         begin = (number_of_students * 1) / 3;
         end = ((number_of_students * (1 + 1)) / 3) - 1;
         for (k = 0; k < end; k++) {
@@ -109,6 +108,7 @@ int main() {
     }
 
     if (id_process == 3) {
+        registry = (char*)calloc(number_of_students, sizeof(char));
         begin = (number_of_students * 2) / 3;
         end = ((number_of_students * (2 + 1)) / 3) - 1;
         for (k = 0; k < end; k++) {
@@ -140,7 +140,6 @@ int main() {
     }
 
     if (id_process == 0) {
-        fprintf(stderr, "\nBefore Gather: Comunicator: %s Id Process: %d\n", comunicator, num_process);
         calculate_media(result1, result2, result3, result4, registry, number_of_students);
     }
 
@@ -152,8 +151,7 @@ int main() {
 void set_array(int * array, int tam) {
     int i;
     for (i = 0; i < tam; i++) {
-        array[i] = i + 1;
-        fprintf(stderr, "\nSet %d", array[i]);
+        array[i] = i;
     }
 }
 
@@ -161,7 +159,6 @@ void set_registry_array(char * registry, int tam, char registry_number) {
     int i;
     for (i = 0; i < tam; i++) {
         registry[i] = registry_number;
-        fprintf(stderr, "\nSet %s", &registry[i]);
     }
 }
 
