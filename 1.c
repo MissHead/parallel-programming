@@ -39,6 +39,7 @@ int main() {
         array = (int*)calloc(number_of_students, sizeof(int));
         set_array(array, number_of_students);
     }
+    registry = (char*)calloc(number_of_students, sizeof(char));
 
     fprintf(stderr, "\nBefore Gather: Comunicator: %s Id Process: %d\n", comunicator, num_process);
 
@@ -50,26 +51,30 @@ int main() {
         while (end != 0) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
             scanf("%s", registry[end]);
+            set_registry_array(registry, number_of_students, registry[end])
+            MPI_Gather(&registry[end], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
             set_array(result1, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result1, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
             set_array(result2, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result2, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
             set_array(result3, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result3, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
             set_array(result4, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result4, 1, MPI_INT, 0, MPI_COMM_WORLD);
             end = end - 1;
         }
-        array = (char*)calloc(number_of_students, sizeof(char));
-        set_registry_array(array, end)
     }
 
     if (id_process == 2) {
@@ -78,26 +83,30 @@ int main() {
         while (end != 0) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
             scanf("%s", registry[end]);
+            set_registry_array(registry, number_of_students, registry[end])
+            MPI_Gather(&registry[end], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
             set_array(result1, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result1, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
             set_array(result2, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result2, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
             set_array(result3, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result3, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
             set_array(result4, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result4, 1, MPI_INT, 0, MPI_COMM_WORLD);
             end = end - 1;
         }
-        array = (char*)calloc(number_of_students, sizeof(char));
-        set_registry_array(array, end);
     }
 
     if (id_process == 3) {
@@ -106,31 +115,31 @@ int main() {
         while (end != 0) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
             scanf("%s", registry[end]);
+            set_registry_array(registry, number_of_students, registry[end])
+            MPI_Gather(&registry[end], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
             set_array(result1, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result1, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
             set_array(result2, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result2, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
             set_array(result3, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result3, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
             set_array(result4, final_result);
+            MPI_Gather(&final_result, 1, MPI_INT, result4, 1, MPI_INT, 0, MPI_COMM_WORLD);
             end = end - 1;
         }
-        array = (char*)calloc(number_of_students, sizeof(char));
-        set_registry_array(array, end);
     }
-
-    MPI_Gather(&registry[begin], 1, MPI_CHAR, array, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
-
-    MPI_Gather(&final_result, 1, MPI_INT, result, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
     if (id_process == 0) {
         fprintf(stderr, "\nBefore Gather: Comunicator: %s Id Process: %d\n", comunicator, num_process);
