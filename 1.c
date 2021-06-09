@@ -159,10 +159,10 @@ void set_registry_array(char * array, int tam, char * registry) {
     }
 }
 
-void get_array(char * array, int tam) {
+void get_array(int * array, int tam) {
     int i;
     for (i = 0; i < tam; i++) {
-        fprintf(stderr, "\nGet %s", array[i]);
+        fprintf(stderr, "\nGet %d", array[i]);
     }
 }
 
