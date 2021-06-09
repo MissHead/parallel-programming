@@ -35,13 +35,13 @@ int main() {
 
 
 	if (id_process == 0) {
-        fprintf("\nEnter number of student:"); 
+        fprintf(stderr, "\nEnter number of student:"); 
         scanf("%d", &number_of_students);
         array = (int*)calloc(number_of_students, sizeof(int));
         set_array(array, number_of_students);
     }
 
-    fprintf("\nBefore Gather: Comunicator: %s Id Process: %d\n", comunicator, num_process);
+    fprintf(stderr, "\nBefore Gather: Comunicator: %s Id Process: %d\n", comunicator, num_process);
 
     MPI_Gather(number_of_students, 1, MPI_INT, array, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
@@ -49,21 +49,21 @@ int main() {
         begin = (number_of_students * 0) / 3;
         end = ((number_of_students * (0 + 1)) / 3) - 1;
         while (end != 0) {
-            fprintf("Enter the 4 digits student registry number:");
+            fprintf(stderr, "Enter the 4 digits student registry number:");
             scanf("%s", registry[end]);
-            fprintf("\nEnter first result of student:"); 
+            fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
             set_array(result1, final_result)
-            fprintf("\nEnter second result of student:"); 
+            fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
             set_array(result2, final_result)
-            fprintf("\nEnter fourth result of student:"); 
+            fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
             set_array(result3, final_result)
-            fprintf("\nEnter fifth result of student:"); 
+            fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
             set_array(result4, final_result)
@@ -77,21 +77,21 @@ int main() {
         begin = (number_of_students * 1) / 3;
         end = ((number_of_students * (1 + 1)) / 3) - 1;
         while (end != 0) {
-            fprintf("Enter the 4 digits student registry number:");
+            fprintf(stderr, "Enter the 4 digits student registry number:");
             scanf("%s", registry[end]);
-            fprintf("\nEnter first result of student:"); 
+            fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
             set_array(result1, final_result)
-            fprintf("\nEnter second result of student:"); 
+            fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
             set_array(result2, final_result)
-            fprintf("\nEnter fourth result of student:"); 
+            fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
             set_array(result3, final_result)
-            fprintf("\nEnter fifth result of student:"); 
+            fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
             set_array(result4, final_result)
@@ -105,21 +105,21 @@ int main() {
         begin = (number_of_students * 2) / 3;
         end = ((number_of_students * (2 + 1)) / 3) - 1;
         while (end != 0) {
-            fprintf("Enter the 4 digits student registry number:");
+            fprintf(stderr, "Enter the 4 digits student registry number:");
             scanf("%s", registry[end]);
-            fprintf("\nEnter first result of student:"); 
+            fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
             set_array(result1, final_result)
-            fprintf("\nEnter second result of student:"); 
+            fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
             set_array(result2, final_result)
-            fprintf("\nEnter fourth result of student:"); 
+            fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
             set_array(result3, final_result)
-            fprintf("\nEnter fifth result of student:"); 
+            fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
             set_array(result4, final_result)
@@ -134,7 +134,7 @@ int main() {
     MPI_Gather(final_result, 1, MPI_INT, result, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
     if (id_process == 0) {
-        fprintf("\nBefore Gather: Comunicator: %s Id Process: %d\n", comunicator, num_process);
+        fprintf(stderr, "\nBefore Gather: Comunicator: %s Id Process: %d\n", comunicator, num_process);
         calculate_media(result1, result2, result3, result4, registry, number_of_students);
     }
 
@@ -147,29 +147,29 @@ void set_array(int * array, int tam) {
     int i;
     for (i = 0; i < tam; i++) {
         array[i] = i + 1;
-        fprintf("\nSet %d", array[i]);
+        fprintf(stderr, "\nSet %d", array[i]);
     }
 }
 
-void set_registry_array(char * array, int tam, char registry) {
+void set_registry_array(char * array, int tam, char * registry) {
     int i;
     for (i = 0; i < tam; i++) {
         array[i] = registry;
-        fprintf("\nSet %s", array[i]);
+        fprintf(stderr, "\nSet %s", array[i]);
     }
 }
 
 void get_array(char * array, int tam) {
     int i;
     for (i = 0; i < tam; i++) {
-        fprintf("\nGet %s", array[i]);
+        fprintf(stderr, "\nGet %s", array[i]);
     }
 }
 
 void calculate_media(int * vet1, int * vet2, int * vet3, int * vet4, char * students, int tam) {
     int i, media = 0;
     int medias[tam];
-    char student;
+    char * student;
     for(i=0; i<tam; i++)     {
         media = (vet1[i] + vet2[i] + vet3[i] + vet4[i])/4;
         medias[i] = media;
@@ -181,6 +181,6 @@ void calculate_media(int * vet1, int * vet2, int * vet3, int * vet4, char * stud
         }
     }
 
-    fprintf("\nBest student: %s", student);
-    fprintf("\nMedia: %d", medias[0]);
+    fprintf(stderr, "\nBest student: %s", student);
+    fprintf(stderr, "\nMedia: %d", medias[0]);
 }
