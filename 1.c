@@ -37,7 +37,7 @@ int main() {
 	if (id_process == 0) {
         fprintf(stderr, "\nEnter number of students:"); 
         scanf("%d", &number_of_students);
-        array = (int*)calloc(number_of_students, sizeof(int));
+        array = (int*)calloc(num_process, sizeof(int));
         set_array(array, number_of_students);
     }
 
@@ -55,22 +55,22 @@ int main() {
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
-            set_array(result1, final_result);
+            set_array(result1, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result1, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
-            set_array(result2, final_result);
+            set_array(result2, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result2, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
-            set_array(result3, final_result);
+            set_array(result3, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result3, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
-            set_array(result4, final_result);
+            set_array(result4, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result4, 1, MPI_INT, 0, MPI_COMM_WORLD);
         }
     }
@@ -87,22 +87,22 @@ int main() {
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
-            set_array(result1, final_result);
+            set_array(result1, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result1, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
-            set_array(result2, final_result);
+            set_array(result2, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result2, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
-            set_array(result3, final_result);
+            set_array(result3, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result3, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
-            set_array(result4, final_result);
+            set_array(result4, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result4, 1, MPI_INT, 0, MPI_COMM_WORLD);
         }
     }
@@ -119,22 +119,22 @@ int main() {
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
-            set_array(result1, final_result);
+            set_array(result1, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result1, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter second result of student:"); 
             scanf("%d", &final_result);
             result2 = (int*)calloc(final_result, sizeof(int));
-            set_array(result2, final_result);
+            set_array(result2, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result2, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fourth result of student:"); 
             scanf("%d", &final_result);
             result3 = (int*)calloc(final_result, sizeof(int));
-            set_array(result3, final_result);
+            set_array(result3, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result3, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter fifth result of student:"); 
             scanf("%d", &final_result);
             result4 = (int*)calloc(final_result, sizeof(int));
-            set_array(result4, final_result);
+            set_array(result4, num_process);
             MPI_Gather(&final_result, 1, MPI_INT, result4, 1, MPI_INT, 0, MPI_COMM_WORLD);
         }
     }
