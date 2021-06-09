@@ -163,7 +163,7 @@ void set_registry_array(char * registry, int tam, char registry_number) {
     int i;
     for (i = 0; i < tam; i++) {
         registry[i] = registry_number;
-        fprintf(stderr, "\nSet %s", registry_number);
+        fprintf(stderr, "\nSet %s", &registry[i]);
     }
 }
 
@@ -178,7 +178,7 @@ void calculate_media(int * vet1, int * vet2, int * vet3, int * vet4, char * stud
     for (i=0; i<tam; i++) {
         if (medias[0] < medias[i]) {
             medias[0] = medias[i];
-            student = students[i];
+            student = &students[i];
         }
     }
 
