@@ -7,7 +7,6 @@
 #include <time.h>
 
 void set_array(int*array, int tam);
-void get_array(int*array, int tam);
 void set_registry_array(char * array, int tam, char registry);
 void calculate_media(int * vet1, int * vet2, int * vet3, int * vet4, char * students, int tam);
 
@@ -43,7 +42,7 @@ int main() {
 
     fprintf(stderr, "\nBefore Gather: Comunicator: %s Id Process: %d\n", comunicator, num_process);
 
-    MPI_Gather(number_of_students, 1, MPI_INT, array, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Gather(&number_of_students, 1, MPI_INT, array, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
     if (id_process == 1) {
         begin = (number_of_students * 0) / 3;
@@ -131,7 +130,7 @@ int main() {
 
     MPI_Gather(&registry[begin], 1, MPI_CHAR, array, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
 
-    MPI_Gather(final_result, 1, MPI_INT, result, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Gather(&final_result, 1, MPI_INT, result, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
     if (id_process == 0) {
         fprintf(stderr, "\nBefore Gather: Comunicator: %s Id Process: %d\n", comunicator, num_process);
@@ -151,18 +150,11 @@ void set_array(int * array, int tam) {
     }
 }
 
-void set_registry_array(char * array, int tam, char * registry) {
+void set_registry_array(char * array, int tam, char registry) {
     int i;
     for (i = 0; i < tam; i++) {
         array[i] = registry;
         fprintf(stderr, "\nSet %s", array[i]);
-    }
-}
-
-void get_array(int * array, int tam) {
-    int i;
-    for (i = 0; i < tam; i++) {
-        fprintf(stderr, "\nGet %d", array[i]);
     }
 }
 
