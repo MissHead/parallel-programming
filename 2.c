@@ -6,7 +6,7 @@
 
 #include <time.h>
 
-void set_array(int * array, int tam, int num);
+void set_array(int * array, int tam, int num, int value);
 void sum(int * array, int tam);
 
 int main() {
@@ -28,22 +28,22 @@ int main() {
             fprintf(stderr, "\nEnter X:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 2);
+            set_array(array, num_process, value, 2);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter Y:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 2);
+            set_array(array, num_process, value, 2);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter W:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 2);
+            set_array(array, num_process, value, 2);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter Z:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 2);
+            set_array(array, num_process, value, 2);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
     }
 
@@ -53,22 +53,22 @@ int main() {
             fprintf(stderr, "\nEnter X:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 1);
+            set_array(array, num_process, value, 1);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter Y:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 1);
+            set_array(array, num_process, value, 1);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter W:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 1);
+            set_array(array, num_process, value, 1);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter Z:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 1);
+            set_array(array, num_process, value, 1);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
     }
 
@@ -78,22 +78,22 @@ int main() {
             fprintf(stderr, "\nEnter X:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 4);
+            set_array(array, num_process, value, 4);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter Y:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 4);
+            set_array(array, num_process, value, 4);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter W:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 4);
+            set_array(array, num_process, value, 4);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter Z:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 4);
+            set_array(array, num_process, value, 4);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
     }
 
@@ -103,22 +103,22 @@ int main() {
             fprintf(stderr, "\nEnter X:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 3);
+            set_array(array, num_process, value, 3);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter Y:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 3);
+            set_array(array, num_process, value, 3);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter W:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 3);
+            set_array(array, num_process, value, 3);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter Z:");
             scanf("%d", &value);
             array = (int*)calloc(value, sizeof(int));
-            set_array(array, num_process, 3);
+            set_array(array, num_process, value, 3);
             MPI_Scatter(&array, 1, MPI_INT, &value, 1, MPI_INT, 0, MPI_COMM_WORLD);
     }
 
@@ -133,15 +133,15 @@ int main() {
     return 0;
 }
 
-void set_array(int * array, int tam, int num) {
+void set_array(int * array, int tam, int num, int value) {
     int i;
     for (i = 0; i < tam; i++) {
-        array[i] = i + num;
+        array[i] = value + num;
     }
 }
 
 void sum(int * array, int tam) {
-    int i, sum;
+    int i, sum = 0;
     for(i=0; i<tam; i++) {
         sum = sum + array[i];
     }
