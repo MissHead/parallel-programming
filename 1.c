@@ -50,8 +50,8 @@ int main() {
         end = ((number_of_students * (0 + 1)) / 3) - 1;
         while (end != 0) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
-            scanf("%s", registry[end]);
-            set_registry_array(registry, number_of_students, registry[end])
+            scanf("%s", &registry[end]);
+            set_registry_array(registry, number_of_students, registry[end]);
             MPI_Gather(&registry[end], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
@@ -82,8 +82,8 @@ int main() {
         end = ((number_of_students * (1 + 1)) / 3) - 1;
         while (end != 0) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
-            scanf("%s", registry[end]);
-            set_registry_array(registry, number_of_students, registry[end])
+            scanf("%s", &registry[end]);
+            set_registry_array(registry, number_of_students, registry[end]);
             MPI_Gather(&registry[end], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
@@ -114,8 +114,8 @@ int main() {
         end = ((number_of_students * (2 + 1)) / 3) - 1;
         while (end != 0) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
-            scanf("%s", registry[end]);
-            set_registry_array(registry, number_of_students, registry[end])
+            scanf("%s", &registry[end]);
+            set_registry_array(registry, number_of_students, registry[end]);
             MPI_Gather(&registry[end], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
