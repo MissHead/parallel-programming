@@ -48,7 +48,7 @@ int main() {
     if (id_process == 1) {
         begin = (number_of_students * 0) / 3;
         end = ((number_of_students * (0 + 1)) / 3) - 1;
-        while (end != 0) {
+        for (k = 0; k < end; k++) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
             scanf("%s", &registry[end]);
             set_registry_array(registry, number_of_students, registry[end]);
@@ -73,14 +73,13 @@ int main() {
             result4 = (int*)calloc(final_result, sizeof(int));
             set_array(result4, final_result);
             MPI_Gather(&final_result, 1, MPI_INT, result4, 1, MPI_INT, 0, MPI_COMM_WORLD);
-            end = end - 1;
         }
     }
 
     if (id_process == 2) {
         begin = (number_of_students * 1) / 3;
         end = ((number_of_students * (1 + 1)) / 3) - 1;
-        while (end != 0) {
+        for (k = 0; k < end; k++) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
             scanf("%s", &registry[end]);
             set_registry_array(registry, number_of_students, registry[end]);
@@ -105,14 +104,13 @@ int main() {
             result4 = (int*)calloc(final_result, sizeof(int));
             set_array(result4, final_result);
             MPI_Gather(&final_result, 1, MPI_INT, result4, 1, MPI_INT, 0, MPI_COMM_WORLD);
-            end = end - 1;
         }
     }
 
     if (id_process == 3) {
         begin = (number_of_students * 2) / 3;
         end = ((number_of_students * (2 + 1)) / 3) - 1;
-        while (end != 0) {
+        for (k = 0; k < end; k++) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
             scanf("%s", &registry[end]);
             set_registry_array(registry, number_of_students, registry[end]);
@@ -137,7 +135,6 @@ int main() {
             result4 = (int*)calloc(final_result, sizeof(int));
             set_array(result4, final_result);
             MPI_Gather(&final_result, 1, MPI_INT, result4, 1, MPI_INT, 0, MPI_COMM_WORLD);
-            end = end - 1;
         }
     }
 
