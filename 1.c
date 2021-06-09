@@ -13,6 +13,7 @@ void calculate_media(int * vet1, int * vet2, int * vet3, int * vet4, char * stud
 int main() {
 
     int num_process;
+    int k = 0;
     int number_of_students;
     int id_process;
     char comunicator[MPI_MAX_PROCESSOR_NAME];
