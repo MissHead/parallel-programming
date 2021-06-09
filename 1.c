@@ -6,8 +6,8 @@
 
 #include <time.h>
 
-void set_array(int*array, int tam);
-void set_registry_array(char * array, int tam, char registry);
+void set_array(int * array, int tam);
+void set_registry_array(char ** array, int tam, char registry);
 void calculate_media(int * vet1, int * vet2, int * vet3, int * vet4, char * students, int tam);
 
 int main() {
@@ -49,9 +49,9 @@ int main() {
         end = ((number_of_students * (0 + 1)) / 3) - 1;
         for (k = 0; k < end; k++) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
-            scanf("%s", &registry[end]);
-            set_registry_array(registry, number_of_students, registry[end]);
-            MPI_Gather(&registry[end], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
+            scanf("%s", &registry[end][k]);
+            set_registry_array(registry, number_of_students, registry[end][k]);
+            MPI_Gather(&registry[end][k], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
@@ -81,9 +81,9 @@ int main() {
         end = ((number_of_students * (1 + 1)) / 3) - 1;
         for (k = 0; k < end; k++) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
-            scanf("%s", &registry[end]);
-            set_registry_array(registry, number_of_students, registry[end]);
-            MPI_Gather(&registry[end], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
+            scanf("%s", &registry[end][k]);
+            set_registry_array(registry, number_of_students, registry[end][k]);
+            MPI_Gather(&registry[end][k], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
@@ -113,9 +113,9 @@ int main() {
         end = ((number_of_students * (2 + 1)) / 3) - 1;
         for (k = 0; k < end; k++) {
             fprintf(stderr, "Enter the 4 digits student registry number:");
-            scanf("%s", &registry[end]);
-            set_registry_array(registry, number_of_students, registry[end]);
-            MPI_Gather(&registry[end], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
+            scanf("%s", &registry[end][k]);
+            set_registry_array(registry, number_of_students, registry[end][k]);
+            MPI_Gather(&registry[end][k], 1, MPI_CHAR, registry, 1, MPI_CHAR, 0, MPI_COMM_WORLD);
             fprintf(stderr, "\nEnter first result of student:"); 
             scanf("%d", &final_result);
             result1 = (int*)calloc(final_result, sizeof(int));
@@ -155,10 +155,12 @@ void set_array(int * array, int tam) {
     }
 }
 
-void set_registry_array(char * registry, int tam, char registry_number) {
-    int i;
+void set_registry_array(char ** registry, int tam, char registry_number) {
+    int i, j;
     for (i = 0; i < tam; i++) {
-        registry[i] = registry_number;
+        for (j = 0; j < tam; j++) {
+            registry[i][j] = registry_number;
+        }
     }
 }
 
