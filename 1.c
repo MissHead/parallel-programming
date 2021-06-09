@@ -26,7 +26,7 @@ int main() {
     int * array;
     int begin;
     int end;
-    int final_result;
+    int final_result = 0;
 
     MPI_Init(NULL, NULL);
     MPI_Comm_size(MPI_COMM_WORLD, &num_process);
