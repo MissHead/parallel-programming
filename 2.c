@@ -6,7 +6,7 @@
 
 #include <time.h>
 
-void set_array(int * array, int tam);
+void set_array(int * array, int tam, int num);
 void sum(int * array, int tam);
 
 int main() {
