@@ -44,7 +44,7 @@ int main() {
     MPI_Gather(&number_of_students, 1, MPI_INT, array, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
     if (id_process == 1) {
-        registry = (char*)calloc(number_of_students, sizeof(char));
+        char** registry = malloc(number_of_students * sizeof(char*));
         begin = (number_of_students * 0) / 3;
         end = ((number_of_students * (0 + 1)) / 3) - 1;
         for (k = 0; k < end; k++) {
@@ -76,7 +76,7 @@ int main() {
     }
 
     if (id_process == 2) {
-        registry = (char*)calloc(number_of_students, sizeof(char));
+        char** registry = malloc(number_of_students * sizeof(char*));
         begin = (number_of_students * 1) / 3;
         end = ((number_of_students * (1 + 1)) / 3) - 1;
         for (k = 0; k < end; k++) {
@@ -108,7 +108,7 @@ int main() {
     }
 
     if (id_process == 3) {
-        registry = (char*)calloc(number_of_students, sizeof(char));
+        char** registry = malloc(number_of_students * sizeof(char*));
         begin = (number_of_students * 2) / 3;
         end = ((number_of_students * (2 + 1)) / 3) - 1;
         for (k = 0; k < end; k++) {
