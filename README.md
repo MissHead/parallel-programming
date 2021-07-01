@@ -1,7 +1,9 @@
 # parallel-programming
 Disciplina de Programação Paralela utilizando openmpi
 
-1 - Com base na estrutura aluno abaixo realize seguintes operações: 
+[1](https://github.com/MissHead/parallel-programming/blob/main/1.c) - Com base na estrutura aluno abaixo realize seguintes operações: 
+
+![alt text](https://github.com/MissHead/parallel-programming/blob/main/1.png)
 
 a) O processo 0 deverá alocar um vetor e preencher um vetor de N alunos digitados pelo usuário. O processo 0 ( o principal ) deverá alocar um vetor de alunos de tamanho N onde N será um valor digitado pelo usuário ou carregado diretamente no seu código. O valor de alunos pode ser 10,20, 30, ou seja, qualquer valor.
 
@@ -13,16 +15,18 @@ c) O processo 2 deverá ler 1/3 (segunda parte) das matrículas e devolver para 
 d) O processo 3 deverá ler 1/3 (terceira parte) das matrículas e devolver para o processo 0. SUpondo que tenhamos 15 alunos. O processo 1 deverá ler a matricula de 5 alunos, o processo 2 de mais 5 alunos e o processo 3 dos outros 5 completando a leitura de todas as matriculas dos 15 alunos.
 
 e) Cada processo (0-3) deverá ler uma das notas de cada aluno. Cada aluno possui 4 notas, cada processo deverá ler 1 nota. Por exemplo:
-- Processo 0 lê a primeira nota do aluno A
-- Processo 1 lê a segunda nota do aluno A
-- Processo 2 lê a terceira nota do aluno A
+- Processo 0 lê a primeira nota do aluno A.
+- Processo 1 lê a segunda nota do aluno A.
+- Processo 2 lê a terceira nota do aluno A.
 - Processo 3 lê a quarta nota do aluno A.
 
 f) O processo 0 deverá mostrar na tela qual o aluno com o maior média.
 
 ---
 
-2 - Faça um programa que siga as seguintes orientações: 
+[2](https://github.com/MissHead/parallel-programming/blob/main/2.c) - Faça um programa que siga as seguintes orientações: 
+
+![alt text](https://github.com/MissHead/parallel-programming/blob/main/2.png)
 
 a) Cada um dos 4 processos deverá ler um valor (x,y,w,z). 
 
@@ -70,7 +74,7 @@ v) O processo 0 deverá receber os valores de todos processos, realizar a sumari
 
 ---
 
-3 - Construa um programa em C, utilizando a biblioteca omp.h que realize as seguintes instruções:
+[3](https://github.com/MissHead/parallel-programming/blob/main/3.c) - Construa um programa em C, utilizando a biblioteca omp.h que realize as seguintes instruções:
 
 a) Dispare 3 threads onde todas devem falar seu ID
 
@@ -82,5 +86,5 @@ d) Apenas 1 das threads ( a 1ª disponível ) deve mostrar na tela os números p
 
 ---
 
-4 - Construa um programa em C, utilizando a biblioteca omp.h que diga quantos números primos há em um vetor de tamanho  n digitado pelo usuário e preenchido com valores de 1 a N de forma sequencial e paralela. Evidencie a melhora do desempenho utilizando programação paralela.
+[4](https://github.com/MissHead/parallel-programming/blob/main/4.c) - Construa um programa em C, utilizando a biblioteca omp.h que diga quantos números primos há em um vetor de tamanho  n digitado pelo usuário e preenchido com valores de 1 a N de forma sequencial e paralela. Evidencie a melhora do desempenho utilizando programação paralela.
 
